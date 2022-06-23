@@ -8,19 +8,18 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-//make sure this line is the last line
-client.login(process.env.CLIENT_TOKEN); //login bot using token
-
 
 client.on('message', msg => {
-    if (msg.content === '!Time') {
+    if (msg.content === '!Time')  {
 
         const messages = ["Time is Running", "Time Fly", "Time is money", "Time to TimeTravel", "For all time always"];
 
         const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
-        console.log(randomMessage)
-
         msg.reply(randomMessage);
     }
 });
+
+//make sure this line is the last line
+client.login(process.env.CLIENT_TOKEN); //login bot using token
+
